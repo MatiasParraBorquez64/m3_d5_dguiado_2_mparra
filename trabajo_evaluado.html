@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const esNumeroEnteroValido = (valor) => {
+            return Number.isInteger(valor) && valor >= 1 && valor <= 20;
+        }
+
+        let numeroMaximo;
+        do {
+            numeroMaximo = parseFloat(prompt("Ingrese un número entero entre 1 y 20:"));
+            if (!Number.isInteger(numeroMaximo)) {
+                alert("Es decimal o letras, debes ingresar número un entero.");
+            } else if (!esNumeroEnteroValido(numeroMaximo)) {
+                alert("Número fuera de rango. Por favor, ingrese un número entero entre 1 y 20.");
+            }
+        } while (!esNumeroEnteroValido(numeroMaximo));
+
+        console.log(`Tabla de multiplicar del ${numeroMaximo}:`);
+        for (let i = 1; i <= numeroMaximo; i++) {
+            let multiplicacion = i * numeroMaximo;
+            console.log(`${i} x ${numeroMaximo} = ${multiplicacion}`);
+        }
+
+        let factorial = 1;
+        for (let i = 1; i <= numeroMaximo; i++) {
+            factorial *= i;
+        }
+        console.log(`Factorial de ${numeroMaximo} = ${factorial}`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
